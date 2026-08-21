@@ -1,7 +1,7 @@
 from src.ai.llm import llm
 
 response = llm.invoke(
-    "Hello, who are you?"
+    "Hello, whats'up?"
 )
 
 print(response.content)
