@@ -1,11 +1,9 @@
 trigger:
-
-* main
+- main
 
 pool:
-vmImage: ubuntu-latest
+  vmImage: ubuntu-latest
 
 steps:
-
-* script: echo "Azure DevOps pipeline is working"
-  displayName: "Test pipeline"
+- script: echo Hello Azure DevOps
+  displayName: Test
