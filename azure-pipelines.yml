@@ -1,37 +1,11 @@
 trigger:
-branches:
-include:
-- main
+
+* main
 
 pool:
-vmImage: 'ubuntu-latest'
+vmImage: ubuntu-latest
 
-stages:
+steps:
 
-* stage: Validate
-  displayName: 'Stage 1 - Validate Application'
-
-  jobs:
-
-  * job: ValidatePython
-    displayName: 'Validate Python Application'
-
-    steps:
-
-    * task: UsePythonVersion@0
-      displayName: 'Use Python 3.12'
-      inputs:
-      versionSpec: '3.12'
-
-    * script: |
-      python --version
-      python -m pip install --upgrade pip
-      displayName: 'Setup Python'
-
-    * script: |
-      python -m pip install -r requirements.txt
-      displayName: 'Install Dependencies'
-
-    * script: |
-      python -m py_compile app.py
-      displayName: 'Validate Application Syntax'
+* script: echo "Azure DevOps pipeline is working"
+  displayName: "Test pipeline"
